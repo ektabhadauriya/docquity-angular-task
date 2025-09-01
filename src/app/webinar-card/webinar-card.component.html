@@ -1,0 +1,80 @@
+<div class="post webinar-post ">
+  <div class="post-head d-flex justify-content-between align-items-start p-2" *ngIf="page">
+    <div class="d-flex">
+      <img src="{{postData.org.img}}" alt="Profile" class="rounded-circle me-2" width="48" height="48">
+      <div>
+        <h6 class="mb-0 fw-bold">{{postData.org.name}}</h6>
+        <small class="text-muted">Sponsored by {{postData.sponsoredBy}}</small><br>
+        <small class="text-muted">{{postData.followers}} followers • {{postData.lastActive}}</small>
+      </div>
+    </div>
+    <div class="d-flex align-items-center">
+      <a href="#" class="text-primary fw-semibold me-3 text-decoration-none">
+        <i class="fa-solid fa-plus me-1"></i> Follow
+      </a>
+      <i class="fa-solid fa-ellipsis-vertical text-muted"></i>
+    </div>
+  </div>
+  <img [src]="postData.img" class="post-img-top" alt="webinar">
+  <div class="post-body p-2">
+    <div class="d-flex align-items-center mb-2">
+      <span class="credit">
+        <img src="assets/icon/star.png" class="me-1" height="18">
+        {{postData.creditPoint.total}} Credits <span [ngClass]="{'text-danger':postData.creditPoint.color}"
+          *ngIf="postData.creditPoint.expiry">(Expiring in {{postData.creditPoint.expiry}})</span>
+      </span>
+    </div>
+    <h6 class="post-title fw-bold">
+      {{postData.title}}
+    </h6>
+
+    <p class="text-muted mb-2">
+      <img src="{{postData.org.img}}" class="me-1" height="18">
+      by <strong>{{postData.org.name}}</strong>
+    </p>
+
+    <div class="highlights p-2 rounded mb-3">
+      <span class="fw-semibold d-block">KEY HIGHLIGHTS</span>
+      <span>{{postData.highlights}}</span>
+    </div>
+
+    <button class="btn btn-dark w-100" *ngIf="!postData.liveOn && !page">Watch now</button>
+  </div>
+  <div class="post-footer d-flex justify-content-between align-items-center" *ngIf="postData.liveOn">
+    <div class="live-info">
+      <div class="live-label">Goes live on</div>
+      <div class="live-date">{{postData.liveOn}}</div>
+    </div>
+    <button class="notify-btn d-flex align-items-center">
+      <i class="bi bi-bell me-2"></i>
+      <span>Notify me</span>
+    </button>
+  </div>
+  <div class="post-footer bg-white px-0" *ngIf="page">
+    <!-- Stats Row -->
+    <div class="d-flex justify-content-between text-muted small mx-2 p-2 border-top">
+      <div>
+        <span>{{postData.likes}} Likes</span>
+        <span class="mx-2">•</span>
+        <span>{{postData.comment}} Comments</span>
+      </div>
+      <div>{{postData.views}} Views</div>
+    </div>
+
+    <!-- Action Buttons Row -->
+    <div class="post-actions d-flex justify-content-around border-top pt-2">
+      <div class="action">
+        <i class="fa-regular fa-thumbs-up"></i> Like
+      </div>
+      <div class="action">
+        <i class="fa-regular fa-comment"></i> Comment
+      </div>
+      <div class="action">
+        <i class="fa-solid fa-retweet"></i> Repost
+      </div>
+      <div class="action">
+        <i class="fa-solid fa-share"></i> Share
+      </div>
+    </div>
+  </div>
+</div>

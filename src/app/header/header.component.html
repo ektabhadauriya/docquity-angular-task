@@ -1,0 +1,61 @@
+<!-- header.component.html -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm px-3 py-2">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="assets/images/logo.png" alt="Docquity Logo" height="30">
+    </a>
+
+    <!-- Search Bar -->
+    <form class="d-none d-md-flex mx-3 flex-grow-1">
+      <div class="input-group">
+        <span class="input-group-text bg-white border-end-0">
+          <i class="bi bi-search"></i>
+        </span>
+        <input type="text" class="form-control border-start-0" placeholder="Search in docquity">
+      </div>
+    </form>
+
+    <!-- Nav Icons -->
+    <ul class="navbar-nav d-flex flex-row align-items-center gap-3 mb-0">
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" href="#">
+          <i class="bi bi-camera-video"></i>
+          <span class="ms-1 d-none d-lg-inline">Webinar</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center" href="#">
+          <i class="bi bi-calendar"></i>
+          <span class="ms-1 d-none d-lg-inline">Calendar</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="bi bi-bell"></i>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Post Button -->
+    <button class="btn btn-primary rounded-pill ms-3">
+      + Post
+    </button>
+
+    <!-- Profile -->
+    <div class="dropdown ms-3">
+      <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="assets/images/profile.jpg" alt="Profile" class="rounded-circle" height="32" width="32">
+        <span class="ms-2">Aaron</span>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Logout</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>

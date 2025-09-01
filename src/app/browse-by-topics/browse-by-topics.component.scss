@@ -1,0 +1,15 @@
+.topics-container {
+  background: #D9F4F9;
+  border-radius: 12px;
+
+  .topic {
+    height: 36px;
+    border-radius: 16px;
+    border: 1px solid #D0D0D0;
+    color: #1B4A52;
+    background: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+}

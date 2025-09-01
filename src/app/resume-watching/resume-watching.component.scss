@@ -1,0 +1,45 @@
+.overflow {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  .videoBox {
+    width: max-content;
+  }
+}
+
+.video {
+  width: 252px;
+  margin-right: 15px;
+  height: 247px;
+  border-radius: 8px;
+  border:1px solid #EEEEEE;
+
+  .title {
+    font-size: 16px;
+    color: #1D1919;
+  }
+
+  .post-body {
+    padding: 16px;
+  }
+
+  p {
+    color: #737171;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  .videoBy {
+    width: 100px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

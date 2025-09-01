@@ -1,0 +1,24 @@
+<section class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>Continue Watching</h4>
+    <button class="btn">View all</button>
+  </div>
+  <div class="overflow">
+    <div class="d-flex justify-content-between align-items-center videoBox">
+      <ng-container *ngFor="let video of videoData">
+        <div class="video">
+          <img [src]="video.img" class="post-img-top" alt="webinar">
+
+          <div class="post-body">
+            <h6 class="title">
+              {{video.title}}
+            </h6>
+            <p class="mb-2">
+              by <span class="videoBy ps-1">{{video.org}}</span>  • {{video.duration}} left
+            </p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

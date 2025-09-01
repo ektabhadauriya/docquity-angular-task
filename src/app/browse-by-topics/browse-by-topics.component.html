@@ -1,0 +1,47 @@
+<section class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>Browse By Topics</h4>
+    <button class="btn">View all</button>
+  </div>
+  <div class="topics-container d-flex justify-content-between flex-wrap p-2">
+    <span class="topic px-3 m-2" *ngFor="let topic of topicList">{{topic.topic}}<span class="ps-2">({{topic.count}})</span></span>
+  </div>
+  <h4>Webinars you may like</h4>
+  <div class="row mx-0">
+    <div class="col-md-3">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              Speciality
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Topics
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+             Topics
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Content for Accordion Item #2
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-9 row mx-0">
+      <div class="col-md-6 px-2 mb-3" *ngFor="let data of webinarData">
+          <app-webinar-card page="browseBy" [postData]="data"></app-webinar-card>
+      </div>
+    </div>
+  </div>
+</section>
