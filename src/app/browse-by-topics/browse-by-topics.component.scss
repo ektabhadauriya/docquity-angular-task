@@ -1,6 +1,15 @@
 .topics-container {
+background: #D9F4F9;
+}
+.topics {
   background: #D9F4F9;
-  border-radius: 12px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
 
   .topic {
     height: 36px;
@@ -11,5 +20,22 @@
     font-size: 14px;
     display: flex;
     align-items: center;
+  }
+}
+.heading {
+  font-size: 16px;
+  color: #444242;
+  font-weight: 500;
+}
+
+.form-check-label {
+  font-size: 14px;
+  color: #444242;
+}
+@media screen and (max-width:600px) {
+  .topics {
+    height: 70px;
+    overflow: auto;
+    flex-direction: column;
   }
 }

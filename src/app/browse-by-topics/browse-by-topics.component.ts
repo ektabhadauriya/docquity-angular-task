@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TopicListModel } from '../home/home.model';
+import { Topic, Webinar } from '../home/home.model';
 import { HomeService } from '../home/home.service';
 
 @Component({
@@ -8,9 +8,9 @@ import { HomeService } from '../home/home.service';
   styleUrls: ['./browse-by-topics.component.scss']
 })
 export class BrowseByTopicsComponent {
-  topicList:Array<TopicListModel> = [];
+  topicList:Array<Topic> = [];
   specialityList:Array<string> = [];
-  webinarData:Array<any> = [];
+  webinarData:Array<Webinar> = [];
   constructor(private readonly homeService:HomeService) {
     this.topicList = this.homeService.getTopicList();
     this.specialityList =this.homeService.getSpecialityList();

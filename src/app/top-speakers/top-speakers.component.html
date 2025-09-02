@@ -1,20 +1,20 @@
 <section class="container mt-4">
-  <div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex justify-content-between align-items-center mb-md-3">
     <h4>Top Speakers</h4>
-    <button class="btn">View all</button>
+    <button class="viewbtn btn">View all<img src="assets/icons/longArrow.png" class="d-md-none ms-2"></button>
   </div>
   <div class="overflow">
-    <div class="d-flex justify-content-between align-items-center videoBox">
+    <div class="d-flex justify-content-between align-items-center videoBox px-4">
       <ng-container *ngFor="let user of topSpeakers">
         <div class="user-post">
           <div class="top-section"></div>
           <span class="user-img" [ngClass]="{'active':user.isLive}">
             <img [src]="user.img" alt="webinar" >
-            <span *ngIf="user.isLive" class="live-icon"><img src="assets/icon/live.svg" class="me-2">Live</span>
+            <span *ngIf="user.isLive" class="live-icon"><img src="assets/icons/live.svg" class="me-2">Live</span>
           </span>
           <div class="post-body mt-4">
             <h6 class="title">
-              {{user.name}}<img src="assets/icon/arrow.png" class="me-2">
+              {{user.name}}<img src="assets/icons/arrow.png" class="me-2">
             </h6>
             <p class="occupation mb-0">{{user.occupation}}
             </p>

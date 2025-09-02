@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WebinarpostComponent } from './webinar-post.component';
+import { WebinarCardComponent } from './webinar-card.component';
 
 describe('WebinarpostComponent', () => {
-  let component: WebinarpostComponent;
-  let fixture: ComponentFixture<WebinarpostComponent>;
+  let component: WebinarCardComponent;
+  let fixture: ComponentFixture<WebinarCardComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WebinarpostComponent]
+      declarations: [WebinarCardComponent]
     });
-    fixture = TestBed.createComponent(WebinarpostComponent);
+    fixture = TestBed.createComponent(WebinarCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

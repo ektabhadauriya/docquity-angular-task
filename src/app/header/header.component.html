@@ -1,61 +1,93 @@
 <!-- header.component.html -->
-<nav class="navbar navbar-expand-lg bg-white shadow-sm px-3 py-2">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
+<nav class="navbar navbar-expand-lg bg-white shadow-sm d-none d-md-block">
+  <div class="container-fluid d-flex align-items-center justify-content-start">
 
     <!-- Logo -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="assets/images/logo.png" alt="Docquity Logo" height="30">
+    <a class="navbar-brand d-flex align-items-center py-2" href="#">
+      <img src="assets/icons/logo.png" alt="Docquity Logo" height="50">
     </a>
 
     <!-- Search Bar -->
-    <form class="d-none d-md-flex mx-3 flex-grow-1">
+    <form class="d-none d-md-flex mx-2 me-lg-5 me-4">
       <div class="input-group">
-        <span class="input-group-text bg-white border-end-0">
-          <i class="bi bi-search"></i>
-        </span>
-        <input type="text" class="form-control border-start-0" placeholder="Search in docquity">
+        <input type="text" class="input-field form-control" placeholder="Search in docquity">
+        <img src="assets/icons/search.png" class="me-2">
       </div>
     </form>
 
     <!-- Nav Icons -->
-    <ul class="navbar-nav d-flex flex-row align-items-center gap-3 mb-0">
+    <ul class="navbar-nav d-none align-items-initial  gap-3 mb-0 ms-4 d-lg-flex">
       <li class="nav-item">
         <a class="nav-link d-flex align-items-center" href="#">
-          <i class="bi bi-camera-video"></i>
+          <img src="assets/icons/home.png" class="">
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link d-flex align-items-center flex-column" href="#">
+          <img src="assets/icons/video.png" height="20">
           <span class="ms-1 d-none d-lg-inline">Webinar</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link d-flex align-items-center" href="#">
-          <i class="bi bi-calendar"></i>
+          <img src="assets/icons/skp.png" class="me-2">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link d-flex align-items-center flex-column" href="#">
+          <img src="assets/icons/calender.png" height="20">
           <span class="ms-1 d-none d-lg-inline">Calendar</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">
-          <i class="bi bi-bell"></i>
+          <img src="assets/icons/bell.png">
         </a>
       </li>
     </ul>
 
+   <img src="assets/icons/bell2.svg" height="35" class="d-lg-none me-3">
+
     <!-- Post Button -->
-    <button class="btn btn-primary rounded-pill ms-3">
-      + Post
+    <button class="btn btn-primary rounded-pill post-btn ms-lg-4">
+      + <span class="d-none d-lg-inline">Post</span>
     </button>
 
     <!-- Profile -->
-    <div class="dropdown ms-3">
-      <a class="d-flex align-items-center text-decoration-none dropdown-toggle" href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="assets/images/profile.jpg" alt="Profile" class="rounded-circle" height="32" width="32">
-        <span class="ms-2">Aaron</span>
-      </a>
+    <div class="dropdown ms-4">
+      <span class="d-flex align-items-center text-decoration-none dropdown-toggle" id="profileDropdown">
+        <div class="position-relative">
+          <img src="assets/icons/user.png" alt="Profile" class="rounded-circle" height="44" width="44">
+          <img src="assets/icons/tick.png" class="position-absolute bottom-0 end-0">
+        </div>
+        <span class="ms-2 d-none d-lg-inline">Aaron</span>
+      </span>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
         <li><a class="dropdown-item" href="#">Profile</a></li>
         <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><hr class="dropdown-divider"></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
         <li><a class="dropdown-item" href="#">Logout</a></li>
       </ul>
     </div>
 
   </div>
 </nav>
+
+<div class="header d-md-none">
+  <div class="top-bar">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span class="title">Webinar</span>
+    <div class="actions">
+      <i class="fa-solid fa-search"></i>
+      <i class="fa-solid fa-sliders ms-3"></i>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">For you</div>
+    <div class="tab">Live</div>
+    <div class="tab">Upcoming</div>
+  </div>
+</div>

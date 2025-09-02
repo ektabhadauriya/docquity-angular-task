@@ -1,44 +1,63 @@
 <section class="container mt-4">
-  <div class="d-flex justify-content-between align-items-center mb-3">
+  <div class="d-flex justify-content-between align-items-center mb-md-3">
     <h4>Browse By Topics</h4>
-    <button class="btn">View all</button>
+    <button class="viewbtn btn">View all<img src="assets/icons/longArrow.png" class="d-md-none ms-2"></button>
   </div>
-  <div class="topics-container d-flex justify-content-between flex-wrap p-2">
-    <span class="topic px-3 m-2" *ngFor="let topic of topicList">{{topic.topic}}<span class="ps-2">({{topic.count}})</span></span>
+  <div class="topics-container mb-3">
+    <div class="topics d-flex justify-content-between flex-wrap p-2">
+      <span class="topic px-3 m-2" *ngFor="let topic of topicList">{{topic.topic}}<span class="ps-2">({{topic.count}})</span></span>
+    </div>
+    <div class="d-md-none text-center"> <img src="assets/icons/scroll.png" ></div>
   </div>
   <h4>Webinars you may like</h4>
-  <div class="row mx-0">
-    <div class="col-md-3">
-      <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-              Speciality
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              Topics
+  <div class="row mx-0 mt-4">
+    <div class="col-lg-3 d-none d-lg-block">
+      <div class="p-3">
+        <div class="mb-3">
+          <button class="btn w-100 text-start d-flex justify-content-between align-items-center ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#specialty">
+            <span class="heading">Specialty</span>
+            <span class="bi bi-chevron-down"></span>
+          </button>
+          <div class="collapse show mt-2" id="specialty">
+            <div class="input-group mb-2">
+              <span class="input-group-text bg-white border-end-0 ps-2 pe-0"><img src="assets/icons/search.png"></span>
+              <input type="text" class="form-control border-start-0" placeholder="Search">
+            </div>
+            <div class="form-check mb-4" *ngFor="let specialty of specialityList">
+              <input class="form-check-input" type="checkbox" id="accupuncture">
+              <label class="form-check-label" for="accupuncture">{{specialty}}</label>
             </div>
           </div>
         </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-             Topics
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              Content for Accordion Item #2
-            </div>
-          </div>
+      
+        <div class="py-2 border-top">
+          <button class="btn w-100 text-start d-flex justify-content-between align-items-center ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#topics">
+            <span class="heading">Topics</span>
+            <span class="bi bi-chevron-down"></span>
+          </button>
+          <div class="collapse" id="topics"></div>
+        </div>
+      
+        <div class="py-2 border-top">
+          <button class="btn w-100 text-start d-flex justify-content-between align-items-center ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#speakers">
+            <span class="heading">Speakers</span>
+            <span class="bi bi-chevron-down"></span>
+          </button>
+          <div class="collapse" id="speakers"></div>
+        </div>
+      
+        <div class="py-2 border-top">
+          <button class="btn w-100 text-start d-flex justify-content-between align-items-center ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#pharma">
+            <span class="heading">Pharma & associations</span>
+            <span class="bi bi-chevron-down"></span>
+          </button>
+          <div class="collapse" id="pharma"></div>
         </div>
       </div>
+      
 
     </div>
-    <div class="col-md-9 row mx-0">
+    <div class="col-lg-9 row mx-0">
       <div class="col-md-6 px-2 mb-3" *ngFor="let data of webinarData">
           <app-webinar-card page="browseBy" [postData]="data"></app-webinar-card>
       </div>

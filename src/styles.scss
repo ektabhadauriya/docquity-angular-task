@@ -1,10 +1,9 @@
-
 h4 {
   font-size: 18px;
   color: #444242;
 }
 
-.btn {
+.viewbtn {
   width: 82px;
   height: 32px;
   display: flex;
@@ -17,4 +16,20 @@ h4 {
   padding-bottom: 6px;
   padding-left: 8px;
   font-size: 16px;
+}
+
+@media screen and (max-width:600px) {
+  h4 {
+    font-size: 14px;
+    padding-left: 15px;
+  }
+  .viewbtn {
+    border: none;
+    width: auto;
+    font-size: 15px;
+  }
+  .container{
+    padding: 0;
+}
+
 }

@@ -1,0 +1,14 @@
+.container {
+    padding: 0 4vw;
+}
+@media screen and (max-width:800px) {
+    .container {
+        padding: 0;
+    }
+  }
+
+@media screen and (max-width:600px){
+    .container{
+        padding: 0;
+    }
+}

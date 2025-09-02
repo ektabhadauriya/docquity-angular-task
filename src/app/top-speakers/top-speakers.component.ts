@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HomeService } from '../home/home.service';
+import { Speaker } from '../home/home.model';
 
 @Component({
   selector: 'app-top-speakers',
@@ -7,7 +8,7 @@ import { HomeService } from '../home/home.service';
   styleUrls: ['./top-speakers.component.scss']
 })
 export class TopSpeakersComponent {
-  topSpeakers:Array<any>=[];
+  topSpeakers:Array<Speaker>=[];
   constructor(private readonly homeService:HomeService) {
     this.topSpeakers = this.homeService.getTopSpeakersData();
   }

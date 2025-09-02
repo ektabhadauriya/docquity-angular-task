@@ -1,4 +1,4 @@
-<div class="post webinar-post ">
+<div class="post me-md-3 ">
   <div class="post-head d-flex justify-content-between align-items-start p-2" *ngIf="page">
     <div class="d-flex">
       <img src="{{postData.org.img}}" alt="Profile" class="rounded-circle me-2" width="48" height="48">
@@ -16,10 +16,10 @@
     </div>
   </div>
   <img [src]="postData.img" class="post-img-top" alt="webinar">
-  <div class="post-body p-2">
+  <div class="post-body p-3">
     <div class="d-flex align-items-center mb-2">
       <span class="credit">
-        <img src="assets/icon/star.png" class="me-1" height="18">
+        <img src="assets/icons/star.png" class="me-1" height="18">
         {{postData.creditPoint.total}} Credits <span [ngClass]="{'text-danger':postData.creditPoint.color}"
           *ngIf="postData.creditPoint.expiry">(Expiring in {{postData.creditPoint.expiry}})</span>
       </span>
@@ -28,17 +28,24 @@
       {{postData.title}}
     </h6>
 
-    <p class="text-muted mb-2">
-      <img src="{{postData.org.img}}" class="me-1" height="18">
-      by <strong>{{postData.org.name}}</strong>
+    <p class="text-muted my-3" *ngIf="!page">
+      <img src="{{postData.org.img}}" class="me-1" height="24">
+      by {{postData.org.name}}
     </p>
 
-    <div class="highlights p-2 rounded mb-3">
+    <div class="highlights p-2 rounded d-md-block mt-3" *ngIf="postData.highlights" [ngClass]="{'d-none mb-3':!page}">
       <span class="fw-semibold d-block">KEY HIGHLIGHTS</span>
       <span>{{postData.highlights}}</span>
     </div>
 
-    <button class="btn btn-dark w-100" *ngIf="!postData.liveOn && !page">Watch now</button>
+    <div class="highlights rounded mb-3 d-none d-md-flex" *ngIf="postData.guidlines">
+      <img src="{{postData.guidlineImg}}">
+      <div class="p-2"> <span class="fw-semibold d-block">RELATED GUIDELINE</span>
+        <span>{{postData.guidlines}}</span>
+      </div>
+    </div>
+
+    <button class="btn btn-dark w-100 mt-3" *ngIf="!postData.liveOn && !page">Watch now</button>
   </div>
   <div class="post-footer d-flex justify-content-between align-items-center" *ngIf="postData.liveOn">
     <div class="live-info">
@@ -46,7 +53,7 @@
       <div class="live-date">{{postData.liveOn}}</div>
     </div>
     <button class="notify-btn d-flex align-items-center">
-      <i class="bi bi-bell me-2"></i>
+      <img src="assets/icons/bell.svg" class="me-1">
       <span>Notify me</span>
     </button>
   </div>
@@ -64,16 +71,16 @@
     <!-- Action Buttons Row -->
     <div class="post-actions d-flex justify-content-around border-top pt-2">
       <div class="action">
-        <i class="fa-regular fa-thumbs-up"></i> Like
+        <img src="assets/icons/like.png"> Like
       </div>
       <div class="action">
-        <i class="fa-regular fa-comment"></i> Comment
+        <img src="assets/icons/comment.png"> Comment
       </div>
       <div class="action">
-        <i class="fa-solid fa-retweet"></i> Repost
+        <img src="assets/icons/repost.png"> Repost
       </div>
       <div class="action">
-        <i class="fa-solid fa-share"></i> Share
+        <img src="assets/icons/share.png">Share
       </div>
     </div>
   </div>
