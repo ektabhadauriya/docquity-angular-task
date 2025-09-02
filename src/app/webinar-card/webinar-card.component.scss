@@ -6,9 +6,11 @@
   min-height: 507px;
 
   img {
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
     object-fit: cover;
+  }
+  .post-img-top {
+    width: 100%;
+    border-radius: 0;
   }
 }
 
